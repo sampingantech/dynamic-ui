@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (c) 2020.
+  ~ PT. Sampingan Mitra Indonesia
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    app:behavior_hideable="false">
+
+    <View
+        android:layout_width="80dp"
+        android:layout_height="6dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:background="@color/cool_grey" />
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:contentDescription="@string/text_image"
+        app:srcCompat="@drawable/ic_empty_location" />
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="8sp"
+        android:text="@string/dialog_current_location_title"
+        android:textAlignment="center"
+        android:textColor="@color/gun_metal"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="6sp"
+        android:text="@string/dialog_current_location_desc"
+        android:textAlignment="center"
+        android:textColor="@color/gun_metal"
+        android:textSize="14sp"
+        android:textStyle="normal" />
+
+    <Button
+        android:id="@+id/buttonToSetting"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/dialog_current_location_button_to_setting"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:cornerRadius="8dp" />
+
+    <Button
+        android:id="@+id/buttonCancel"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/ice_blue"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/dialog_current_location_button_cancel"
+        android:textAllCaps="false"
+        android:textColor="@color/blue"
+        android:textSize="15sp"
+        app:cornerRadius="8dp" />
+
+</LinearLayout>

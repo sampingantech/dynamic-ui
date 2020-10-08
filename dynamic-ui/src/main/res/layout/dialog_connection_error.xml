@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2020.
+  ~ PT. Sampingan Mitra Indonesia
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view11"
+        android:layout_width="80dp"
+        android:layout_height="6dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_corner_14dp_very_light_gray_full" />
+
+    <ImageView
+        android:id="@+id/imageDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:contentDescription="@string/text_image"
+        app:srcCompat="@drawable/ic_offline" />
+
+    <TextView
+        android:id="@+id/textDialogTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="sans-serif"
+        android:lineSpacingExtra="8sp"
+        android:textColor="@color/gun_metal"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:text="Kamu sedang offline" />
+
+    <TextView
+        android:id="@+id/textDialogDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="sans-serif"
+        android:lineSpacingExtra="6sp"
+        android:textAlignment="center"
+        android:textColor="@color/gun_metal"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        tools:text="Harap periksa kembali jaringan kamu. Jangan khawatir! Perubahan yang kamu lakukan akan dikirim saat kamu kembali online." />
+
+    <Button
+        android:id="@+id/buttonAction"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="sans-serif"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:lineSpacingExtra="6sp"
+        android:text="@string/text_im_understand"
+        android:textAllCaps="false"
+        android:textColor="@color/off_white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:cornerRadius="8dp" />
+</LinearLayout>

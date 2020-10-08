@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="8dp"
+    android:orientation="vertical"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="Nama lengkap" />
+
+        <ImageButton
+            android:id="@+id/buttonHelp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_weight="0"
+            android:contentDescription="@string/text_image"
+            android:scaleType="center"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_help"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textPrefix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            android:visibility="gone"
+            tools:text="+62"
+            tools:visibility="visible" />
+
+
+        <EditText
+            android:id="@+id/editTextValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:background="@color/white"
+            android:ems="10"
+            android:fontFamily="sans-serif"
+            android:gravity="start|center"
+            android:hint="@string/text_please_filled"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/viewLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/very_light_grey" />
+
+    <TextView
+        android:id="@+id/textDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/gull_grey"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        android:visibility="gone"
+        tools:visibility="visible"
+        tools:text="[CaptionGoesHere]" />
+
+    <TextView
+        android:id="@+id/textError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/reddish"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        tools:text="Tanggal tidak boleh kosong" />
+
+
+</LinearLayout>

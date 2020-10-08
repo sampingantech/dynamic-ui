@@ -1,0 +1,3 @@
+include ':dynamic-ui'
+include ':sample'
+rootProject.name = "Dynamic UI"
