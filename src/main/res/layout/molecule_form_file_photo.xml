@@ -59,7 +59,7 @@
         android:visibility="gone"
         tools:visibility="visible" />
 
-    <com.sampingan.agentapp.dynamic_ui.widget.DrawableButton
+    <co.sampingan.android.dynamic_ui.widget.DrawableButton
         android:id="@+id/buttonAction"
         style="@style/TextButton"
         android:layout_width="match_parent"

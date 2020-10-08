@@ -11,7 +11,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application>
-        <activity android:name=".activities.LocationMapActivity"></activity>
+        <activity android:name="co.sampingan.android.dynamic_ui.activities.LocationMapActivity"></activity>
     </application>
 
 </manifest>

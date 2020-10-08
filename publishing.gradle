@@ -1,0 +1,70 @@
+apply plugin: 'maven-publish'
+apply plugin: 'com.jfrog.bintray'
+
+tasks.register("sourceJar", Jar) {
+    from android.sourceSets.main.java.srcDirs
+    archiveClassifier.set('sources')
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            releaseAar(MavenPublication) {
+                from components.release
+                artifact sourceJar
+
+                groupId = 'co.sampingan.android'
+                artifactId = 'dynamic-ui'
+                version = rootProject.ext.versionName
+
+                pom {
+                    name = 'Dynamic UI'
+                    description = 'Generate a dynamic UI based-on JSON Schema draft-07'
+                    url = 'https://github.com/sampingantech/dynamic-ui'
+                    licenses {
+                        license {
+                            name = 'The Apache License, Version 2.0'
+                            url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                        }
+                    }
+                    developers {
+                        developer {
+                            id = 'sampingan'
+                            name = 'Sampingan'
+                            email = 'iqbal@sampingan.co.id'
+                        }
+                    }
+                    scm {
+                        url = 'https://github.com/sampingantech/dynamic-ui'
+                    }
+                }
+            }
+        }
+    }
+
+    bintray {
+        user = rootProject.hasProperty('user') ? rootProject.property('user') : System.getenv('BINTRAY_USER')
+        key = rootProject.hasProperty('apiKey') ? rootProject.property('apiKey') : System.getenv('BINTRAY_API_KEY')
+
+        publications = ["releaseAar"]
+
+        pkg {
+            repo = 'android'
+            name = 'dynamic-ui'
+            desc = "Generate a dynamic UI based-on JSON Schema draft-07"
+            userOrg = System.env.BINTRAY_USER_ORGANIZATION ?: ""
+            licenses = ['Apache-2.0']
+            vcsUrl = 'https://github.com/sampingantech/dynamic-ui.git'
+            websiteUrl = 'https://github.com/sampingantech/dynamic-ui'
+            issueTrackerUrl = 'https://github.com/sampingantech/dynamic-ui/issues'
+            labels = ['json schema', 'kotlin', 'dynamic-ui']
+
+            githubRepo = 'sampingantech/dynamic-ui' //Optional Github repository
+
+            version {
+                name = rootProject.ext.versionName
+                vcsTag = rootProject.ext.versionName
+            }
+        }
+    }
+}

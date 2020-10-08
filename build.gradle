@@ -7,6 +7,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply from: 'publishing.gradle'
 
 androidExtensions {
     experimental = true
@@ -16,18 +17,12 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
+        consumerProguardFiles "proguard-rules.pro"
     }
 
     buildTypes {
@@ -36,28 +31,39 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+        kotlinOptions.freeCompilerArgs +=
+                ['-module-name', "co.sampingan.android.dynamic-ui"]
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-    implementation(AndroidDependencies.kotlin8)
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.10")
 
-    implementation(AndroidDependencies.core_ktx)
-    implementation(AndroidDependencies.appcompat)
-    implementation(AndroidDependencies.exifinterface)
-    implementation(Lifecycle.viewmodel_ktx)
+    implementation("androidx.core:core-ktx:1.3.2")
+    implementation("androidx.appcompat:appcompat:1.2.0")
+    implementation("androidx.exifinterface:exifinterface:1.3.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
 
-    implementation(AndroidDependencies.recyclerview)
-    implementation(AndroidDependencies.cardview)
-    implementation(AndroidDependencies.constraintlayout)
-    implementation(AndroidDependencies.material)
+    implementation("androidx.recyclerview:recyclerview:1.1.0")
+    implementation("androidx.cardview:cardview:1.0.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.0.2")
+    implementation("com.google.android.material:material:1.3.0-alpha03")
 
-    implementation(AndroidDependencies.play_location)
-    implementation(AndroidDependencies.play_maps)
-    implementation(AndroidDependencies.androidFragmentKtx)
-    implementation(AndroidDependencies.coil)
-    implementation(AndroidDependencies.gson)
+    implementation("com.google.android.gms:play-services-location:17.1.0")
+    implementation("com.google.android.gms:play-services-maps:17.0.0")
+    implementation("androidx.fragment:fragment-ktx:1.2.5")
+    implementation("io.coil-kt:coil:0.11.0")
+    implementation("com.google.code.gson:gson:2.8.6")
 
-    implementation(AndroidSupports.markwon)
-    implementation(AndroidSupports.markwon_image_coil)
-    implementation(AndroidSupports.markwon_html)
+    implementation("io.noties.markwon:core:4.5.1")
+    implementation("io.noties.markwon:image-coil:4.5.1")
+    implementation("io.noties.markwon:html:4.5.1")
 }

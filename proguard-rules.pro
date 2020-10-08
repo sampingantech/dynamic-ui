@@ -49,15 +49,14 @@
     volatile <fields>;
 }
 
-# https://stackoverflow.com/a/60449002/3763032
--keep class org.threeten.bp.zone.*
+# model
+-keepnames @kotlin.Metadata class com.google.gson.JsonObject.** { *; }
+-keep class com.google.gson.JsonObject.** { *; }
+-keepclassmembers class com.google.gson.JsonObject.** { *; }
 
-# DataBinding
--dontwarn androidx.databinding.**
--keep class androidx.databinding.** { *; }
--keep class * extends androidx.databinding.DataBinderMapper
+-keep class sun.misc.Unsafe { *; }
+-keep class com.google.gson.stream.** { *; }
 
-# Constant
 -keepnames @kotlin.Metadata class com.sampingan.agentapp.dynamic_ui.model.** { *; }
 -keepnames @kotlin.Metadata com.sampingan.agentapp.dynamic_ui.rule.** { *; }
 -keepnames @kotlin.Metadata com.sampingan.agentapp.dynamic_ui.utils.** { *; }
