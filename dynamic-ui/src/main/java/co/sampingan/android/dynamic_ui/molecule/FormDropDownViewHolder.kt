@@ -4,7 +4,7 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import co.sampingan.android.dynamic_ui.model.DynamicView
-import com.sampingan.agentapp.dynamic_ui.R
+import co.sampingan.android.dynamic_ui.R
 import co.sampingan.android.dynamic_ui.adapter.DropDownRecyclerAdapter
 import co.sampingan.android.dynamic_ui.extension.afterTextChanged
 import co.sampingan.android.dynamic_ui.extension.fullExpanded

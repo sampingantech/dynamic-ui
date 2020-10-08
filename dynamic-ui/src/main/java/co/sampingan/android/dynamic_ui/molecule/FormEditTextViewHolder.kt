@@ -5,7 +5,7 @@ import android.text.InputType
 import android.text.TextWatcher
 import android.view.View
 import androidx.core.content.ContextCompat
-import com.sampingan.agentapp.dynamic_ui.R
+import co.sampingan.android.dynamic_ui.R
 import co.sampingan.android.dynamic_ui.adapter.TaskSubmissionAdapter.Companion.PHONE_WIDGET
 import co.sampingan.android.dynamic_ui.adapter.TaskSubmissionAdapter.Companion.PRICE_WIDGET
 import co.sampingan.android.dynamic_ui.extension.visible

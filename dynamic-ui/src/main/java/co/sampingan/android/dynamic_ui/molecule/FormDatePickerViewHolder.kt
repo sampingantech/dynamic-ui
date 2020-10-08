@@ -4,7 +4,7 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import co.sampingan.android.dynamic_ui.utils.DateHelper
 import co.sampingan.android.dynamic_ui.model.DynamicView
-import com.sampingan.agentapp.dynamic_ui.R
+import co.sampingan.android.dynamic_ui.R
 import co.sampingan.android.dynamic_ui.adapter.TaskSubmissionAdapter.Companion.DATE_WIDGET
 import co.sampingan.android.dynamic_ui.adapter.TaskSubmissionAdapter.Companion.TIME_WIDGET
 import co.sampingan.android.dynamic_ui.dialog.DateTimePickerDialog

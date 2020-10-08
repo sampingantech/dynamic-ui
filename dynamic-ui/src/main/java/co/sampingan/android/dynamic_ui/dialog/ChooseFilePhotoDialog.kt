@@ -18,7 +18,7 @@ import android.view.LayoutInflater
 import android.widget.Toast
 import com.google.android.material.bottomsheet.BottomSheetDialog
 //import com.google.firebase.crashlytics.FirebaseCrashlytics
-import com.sampingan.agentapp.dynamic_ui.R
+import co.sampingan.android.dynamic_ui.R
 import co.sampingan.android.dynamic_ui.extension.fullExpanded
 import co.sampingan.android.dynamic_ui.extension.visible
 import co.sampingan.android.dynamic_ui.utils.Constant.Companion.CAMERA_TEXT
