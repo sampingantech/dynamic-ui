@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2020.
+  ~ PT. Sampingan Mitra Indonesia
+  -->
+
+<resources>
+    <color name="colorPrimary">@color/colorWhite</color>
+    <color name="colorPrimaryDark">@color/colorWhite</color>
+    <color name="colorAccent">@color/colorLightGold</color>
+    <color name="colorLightGold">#fdc663</color>
+    <color name="colorWhite">@color/honeydew</color>
+    <color name="text_in_button">@color/honeydew</color>
+
+
+    <color name="honeydew">#fefffe</color>
+    <color name="blue">#3DA5D9</color>
+    <color name="gun_metal">#485158</color>
+    <color name="cool_grey">#a9adb0</color>
+    <color name="light_grey">#cacdcf</color>
+    <color name="off_white">#fefffe</color>
+    <color name="black">#2c2c2c</color>
+    <color name="very_light_grey">#efefef</color>
+    <color name="brown_grey">#a1a1a1</color>
+    <color name="white">#ffffff</color>
+    <color name="white_smoke">#f5f5f5</color>
+    <color name="brown_grey_20">#33898989</color>
+    <color name="greyish_brown">#545454</color>
+    <color name="reddish">#d62d2a</color>
+    <color name="green">#2a9d8f</color>
+    <color name="greyish_brown_two">#444444</color>
+    <color name="ice_blue">#ebf6fb</color>
+    <color name="very_light_pink">#e2e2e2</color>
+    <color name="gull_grey">#a9adb0</color>
+    <color name="colorThinLightGold">#fddda2</color>
+    <color name="grey_light">#959b9f</color>
+
+</resources>

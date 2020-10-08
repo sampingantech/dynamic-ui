@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2020.
+  ~ PT. Sampingan Mitra Indonesia
+  -->
+
+<resources>
+    <string name="molecule_address_city_title">Kota / Kecamatan</string>
+    <string name="molecule_address_postal_code_title">Kode Pos</string>
+    <string name="molecule_address_postal_address_title">Alamat</string>
+
+    <string name="text_image">image</string>
+    <string name="text_camera">Camera</string>
+    <string name="text_gallery">Gallery</string>
+    <string name="text_empty"> </string>
+    <string name="text_can_not_empty"> %s tidak boleh kosong</string>
+    <string name="text_choose_date">Pilih tanggal</string>
+    <string name="text_please_filled">Tolong diisi</string>
+    <string name="text_take_file">AMBIL FOTO</string>
+    <string name="text_choose_location">Pilih Lokasi</string>
+    <string name="text_select">Pilih</string>
+    <string name="text_search">Cari…</string>
+    <string name="text_im_understand">Oke, Saya mengerti</string>
+    <string name="text_oke">Oke</string>
+    <string name="text_ok">OK</string>
+    <string name="text_other">Lainnya</string>
+
+    <string name="dialog_current_location_title">Izinkan Sampingan mengakses %s kamu</string>
+    <string name="dialog_current_location_desc">Kamu tidak dapat mengirim data dan melakukan absen tanpa mengizinkan Sampingan mengakses %s kamu sekarang.</string>
+    <string name="dialog_current_location_button_to_setting">Izinkan Sekarang</string>
+    <string name="dialog_current_location_button_cancel">Tidak, nanti saja</string>
+    <string name="dialog_file_photo_title">Choose File</string>
+    <string name="dialog_permission_camera_rejected">You don\'t have permission to access camera</string>
+    <string name="dialog_permission_external_rejected">You don\'t have permission to access external storage</string>
+    <string name="dialog_path_not_exist">"File tidak dapat dilampirkan, pastikan file ada di media penyimpanan lokal"</string>
+
+    <string name="successful_task_submission_title">Data kamu berhasil terkirim!</string>
+    <string name="successful_task_submission_desc">Kami akan melakukan proses validasi data yang kamu kirim.</string>
+    <string name="text_set_location">Set Location</string>
+    <string name="text_location">LOKASI</string>
+
+    <string name="wrong_format">"Format %s salah"</string>
+</resources>

@@ -1,0 +1,63 @@
+/*
+ * Copyright (c) 2020.
+ * PT. Sampingan Mitra Indonesia
+ */
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+androidExtensions {
+    experimental = true
+}
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation(AndroidDependencies.kotlin8)
+
+    implementation(AndroidDependencies.core_ktx)
+    implementation(AndroidDependencies.appcompat)
+    implementation(AndroidDependencies.exifinterface)
+    implementation(Lifecycle.viewmodel_ktx)
+
+    implementation(AndroidDependencies.recyclerview)
+    implementation(AndroidDependencies.cardview)
+    implementation(AndroidDependencies.constraintlayout)
+    implementation(AndroidDependencies.material)
+
+    implementation(AndroidDependencies.play_location)
+    implementation(AndroidDependencies.play_maps)
+    implementation(AndroidDependencies.androidFragmentKtx)
+    implementation(AndroidDependencies.coil)
+    implementation(AndroidDependencies.gson)
+
+    implementation(AndroidSupports.markwon)
+    implementation(AndroidSupports.markwon_image_coil)
+    implementation(AndroidSupports.markwon_html)
+}
