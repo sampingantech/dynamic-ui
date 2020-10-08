@@ -13,7 +13,7 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.core.content.ContextCompat
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.sampingan.agentapp.dynamic_ui.R
+import co.sampingan.android.dynamic_ui.R
 import co.sampingan.android.dynamic_ui.extension.fullExpanded
 import co.sampingan.android.dynamic_ui.extension.visible
 import co.sampingan.android.dynamic_ui.utils.Constant.Companion.PERMISSION_CAMERA_TEXT

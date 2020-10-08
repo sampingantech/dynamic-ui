@@ -25,7 +25,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
-import com.sampingan.agentapp.dynamic_ui.R
+import co.sampingan.android.dynamic_ui.R
 import co.sampingan.android.dynamic_ui.model.Location
 import co.sampingan.android.dynamic_ui.utils.Permission
 import kotlinx.android.synthetic.main.activity_location_map.*

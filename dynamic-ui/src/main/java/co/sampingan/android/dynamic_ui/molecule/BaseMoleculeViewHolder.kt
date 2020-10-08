@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.api.load
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import co.sampingan.android.dynamic_ui.model.DynamicView
-import com.sampingan.agentapp.dynamic_ui.R
+import co.sampingan.android.dynamic_ui.R
 import co.sampingan.android.dynamic_ui.extension.fullExpanded
 import co.sampingan.android.dynamic_ui.extension.visible
 import co.sampingan.android.dynamic_ui.utils.Constant.Companion.PERCENT_TEXT

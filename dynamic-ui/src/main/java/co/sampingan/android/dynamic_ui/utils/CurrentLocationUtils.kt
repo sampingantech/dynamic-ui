@@ -11,7 +11,7 @@ import android.content.Intent
 import android.location.Location
 import android.provider.Settings
 import com.google.android.gms.location.*
-import com.sampingan.agentapp.dynamic_ui.R
+import co.sampingan.android.dynamic_ui.R
 import co.sampingan.android.dynamic_ui.dialog.ErrorStateDialog
 import co.sampingan.android.dynamic_ui.extension.isActiveGPS
 

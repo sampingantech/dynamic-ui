@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.sampingan.agentapp.dynamic_ui.R
+import co.sampingan.android.dynamic_ui.R
 import co.sampingan.android.dynamic_ui.extension.visible
 import co.sampingan.android.dynamic_ui.model.DropDownValue
 import kotlinx.android.synthetic.main.item_filter.view.*

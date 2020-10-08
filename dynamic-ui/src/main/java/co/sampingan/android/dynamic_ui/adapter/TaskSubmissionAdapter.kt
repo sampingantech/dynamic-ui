@@ -11,7 +11,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import co.sampingan.android.dynamic_ui.molecule.*
 import co.sampingan.android.dynamic_ui.model.DynamicView
-import com.sampingan.agentapp.dynamic_ui.molecule.*
+import co.sampingan.android.dynamic_ui.molecule.*
 
 /**
  * Created by ilgaputra15

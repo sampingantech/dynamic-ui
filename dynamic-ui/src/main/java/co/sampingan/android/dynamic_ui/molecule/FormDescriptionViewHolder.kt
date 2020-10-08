@@ -7,7 +7,7 @@ package co.sampingan.android.dynamic_ui.molecule
 
 import android.view.View
 import co.sampingan.android.dynamic_ui.model.DynamicView
-import com.sampingan.agentapp.dynamic_ui.R
+import co.sampingan.android.dynamic_ui.R
 import co.sampingan.android.dynamic_ui.extension.visible
 import co.sampingan.android.dynamic_ui.rule.toDescription
 import co.sampingan.android.dynamic_ui.rule.toTitle
