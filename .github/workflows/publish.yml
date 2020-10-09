@@ -17,16 +17,16 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v1
-    - name: Set up JDK 1.8
-      uses: actions/setup-java@v1
-      with:
-        java-version: 1.8
-    - name: Grant Permission to Execute
-      run: chmod +x gradlew
-    - name: Runs commands to Publish Library
-      env:
-        BINTRAY_USER: ${{ secrets.BINTRAY_USER }}
-        BINTRAY_API_KEY: ${{ secrets.BINTRAY_API_KEY }}
-      run: ./gradlew :dynamic-ui:build :dynamic-ui:bintrayUpload --info
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v1
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Grant Permission to Execute
+        run: chmod +x gradlew
+      - name: Runs commands to Publish Library
+        env:
+          BINTRAY_USER: ${{ secrets.BINTRAY_USER }}
+          BINTRAY_API_KEY: ${{ secrets.BINTRAY_API_KEY }}
+        run: ./gradlew :dynamic-ui:assembleRelease :library:bintrayUpload --info
