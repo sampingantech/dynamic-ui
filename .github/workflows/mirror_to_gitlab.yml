@@ -15,6 +15,8 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
+      - name: Test ssh connection with Gitlab
+        run: ssh -Tv git@gitlab.com
       - uses: spyoungtech/mirror-action@master
         with:
           REMOTE: 'git@gitlab.com:sampingan-mobile/dynamic-ui.git'
