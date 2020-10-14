@@ -6,6 +6,7 @@ on:
     branches: [develop]
     types:
       - completed
+      - requested
 
 jobs:
   build:
