@@ -16,7 +16,11 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
       - name: Test ssh connection with Gitlab
-        run: ssh -Tv git@gitlab.com
+        run: |
+          echo ${{ secrets.GIT_SSH_PRIVATE_KEY }} > ~/.ssh/id_rsa
+          echo ${{ secrets.GIT_SSH_PUBLIC_KEY }} > ~/.ssh/id_rsa.pub
+          echo ${{ secrets.GIT_SSH_KNOWN_HOSTS }} > ~/.ssh/known_hosts
+          ssh -Tv git@gitlab.com
       - uses: spyoungtech/mirror-action@master
         with:
           REMOTE: 'git@gitlab.com:sampingan-mobile/dynamic-ui.git'
