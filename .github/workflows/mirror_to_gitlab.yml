@@ -17,7 +17,7 @@ jobs:
           fetch-depth: 0
       - uses: spyoungtech/mirror-action@master
         with:
-          REMOTE: 'ssh://mochadwi@gitlab.com:sampingan-mobile/dynamic-ui.git'
+          REMOTE: 'git@gitlab.com:sampingan-mobile/dynamic-ui.git'
           GIT_SSH_PRIVATE_KEY: ${{ secrets.GIT_SSH_PRIVATE_KEY }}
           GIT_SSH_KNOWN_HOSTS: ${{ secrets.GIT_SSH_KNOWN_HOSTS }}
           DEBUG: "true"
