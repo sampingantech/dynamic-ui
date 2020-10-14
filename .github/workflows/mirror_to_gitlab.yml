@@ -1,0 +1,24 @@
+name: Mirroring to private Gitlab repository
+
+on:
+  workflow_run:
+    workflows: ["Dry run assembleRelease to Bintray"]
+    branches: [develop]
+    types:
+      - completed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: spyoungtech/mirror-action@master
+        with:
+          REMOTE: 'ssh://git@gitlab.com:sampingan-mobile/dynamic-ui.git'
+          GIT_SSH_PRIVATE_KEY: ${{ secrets.GIT_SSH_PRIVATE_KEY }}
+          GIT_SSH_KNOWN_HOSTS: ${{ secrets.GIT_SSH_KNOWN_HOSTS }}
+          DEBUG: "true"
+          PUSH_ALL_REFS: "false"
