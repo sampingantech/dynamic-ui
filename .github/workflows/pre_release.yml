@@ -28,7 +28,7 @@ jobs:
           java-version: 1.8
       - name: Grant Permission to Execute
         run: chmod +x gradlew
-      - name: Runs commands to check if assembleRelease and uploading to bintray fails
+      - name: Restoring cache
         uses: actions/cache@v2
         with:
           path: |
@@ -37,6 +37,7 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
+      - name: Runs commands to check if assembleRelease and uploading to bintray fails
         env:
           BINTRAY_USER: ${{ secrets.BINTRAY_USER }}
           BINTRAY_API_KEY: ${{ secrets.BINTRAY_API_KEY }}
