@@ -78,7 +78,8 @@ fun provideQuestionSchema(jsonRule: JsonObject) =
         keyName = "keyName",
         title = jsonRule["title"]?.asString.orEmpty(),
         type = jsonRule["type"]?.asString.orEmpty(),
-        properties = jsonRule["properties"]?.asJsonObject!!
+        properties = jsonRule["properties"]?.asJsonObject!!,
+        nextSectionRef = jsonRule["nextSectionRef"]?.asString.orEmpty()
     )
 
 fun provideAnswerSchema(answerRule: JsonElement?, answerStatusRule: JsonObject?): AnswerSchemaRule =
@@ -93,7 +94,8 @@ data class QuestionSchema(
     val keyName: String,
     val type: String,
     val title: String,
-    val properties: JsonObject
+    val properties: JsonObject,
+    val nextSectionRef: String
 )
 
 data class JsonSchemaRule(
