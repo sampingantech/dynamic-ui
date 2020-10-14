@@ -16,9 +16,7 @@ jobs:
       - uses: spyoungtech/mirror-action@master
         with:
           REMOTE: 'git@gitlab.com:sampingan-mobile/dynamic-ui.git'
-          GIT_USERNAME: "mochadwi"
           GIT_SSH_PRIVATE_KEY: ${{ secrets.GIT_SSH_PRIVATE_KEY }}
-          GIT_SSH_PUBLIC_KEY: ${{ secrets.GIT_SSH_PUBLIC_KEY }}
-          GIT_SSH_KNOWN_HOSTS: ${{ secrets.GIT_SSH_KNOWN_HOSTS }}
+          GIT_SSH_NO_VERIFY_HOST: "true"
           DEBUG: "true"
           PUSH_ALL_REFS: "false"
