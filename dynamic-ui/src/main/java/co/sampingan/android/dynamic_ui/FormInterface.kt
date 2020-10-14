@@ -7,6 +7,7 @@ import android.content.Intent
  * on Tuesday, 24/03/2020 11.50
  * Mobile Engineer - https://github.com/ilgaputra15
  **/
+
 interface FormInterface {
     fun setupForm()
     fun showFileDialog(widget: String, key: String)
