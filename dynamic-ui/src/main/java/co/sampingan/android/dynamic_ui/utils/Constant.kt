@@ -58,5 +58,6 @@ class Constant {
 
         //JSON SCHEMA KEY UTILS
         const val ENUM_KEY = "enum"
+        const val ENUM_NAMES_KEY = "enumNames"
     }
 }

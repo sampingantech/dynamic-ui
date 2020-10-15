@@ -14,6 +14,7 @@ import co.sampingan.android.dynamic_ui.extension.visible
 import co.sampingan.android.dynamic_ui.model.DynamicView
 import co.sampingan.android.dynamic_ui.rule.toDescription
 import co.sampingan.android.dynamic_ui.utils.Constant.Companion.ENUM_KEY
+import co.sampingan.android.dynamic_ui.utils.Constant.Companion.ENUM_NAMES_KEY
 import co.sampingan.android.dynamic_ui.utils.Constant.Companion.STAR_TEXT
 import co.sampingan.android.dynamic_ui.utils.Validation
 import kotlinx.android.synthetic.main.molecule_form_check_box.view.*
@@ -46,6 +47,7 @@ class FormCheckBoxViewHolder(itemView: View) : BaseMoleculeViewHolder(itemView) 
         setupButtonHelp(data.uiSchemaRule.uiHelp, data)
         itemView.linearLayoutCheckBox.removeAllViews()
         val value = data.jsonSchema.items?.get(ENUM_KEY)?.asJsonArray
+        val labels = data.jsonSchema.items?.get(ENUM_NAMES_KEY)?.asJsonArray
         value?.forEachIndexed { index, jsonElement ->
             if (jsonElement.isJsonNull) {
                 val checkBoxOther = generateCheckBoxOther(
@@ -67,7 +69,7 @@ class FormCheckBoxViewHolder(itemView: View) : BaseMoleculeViewHolder(itemView) 
                 }
                 itemView.linearLayoutCheckBox.addView(checkBoxOther)
             } else {
-                val checkBox = generateCheckBox(jsonElement.asString, index)
+                val checkBox = generateCheckBox(labels?.get(index)?.asString, index)
                 if (data.isError)
                     if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
                         checkBox.buttonTintList = ColorStateList.valueOf(
@@ -110,10 +112,10 @@ class FormCheckBoxViewHolder(itemView: View) : BaseMoleculeViewHolder(itemView) 
         }
     }
 
-    private fun generateCheckBox(value: String, index: Int): CheckBox {
+    private fun generateCheckBox(label: String?, index: Int): CheckBox {
         val params = TableRow.LayoutParams(
-                TableRow.LayoutParams.MATCH_PARENT,
-                TableRow.LayoutParams.WRAP_CONTENT
+            TableRow.LayoutParams.MATCH_PARENT,
+            TableRow.LayoutParams.WRAP_CONTENT
         )
         params.setMargins(0, 24, 0, 0)
         val checkBox = CheckBox(itemView.context)
@@ -122,7 +124,7 @@ class FormCheckBoxViewHolder(itemView: View) : BaseMoleculeViewHolder(itemView) 
         checkBox.setPadding(36, 0, 0, 0)
         checkBox.textSize = 12F
         checkBox.setTextColor(ContextCompat.getColor(itemView.context, R.color.brown_grey))
-        checkBox.text = value
+        checkBox.text = label
         checkBox.isChecked = datas.containsKey(index)
         return checkBox
     }
