@@ -90,11 +90,15 @@ class FormEditTextViewHolder(itemView: View) : BaseMoleculeViewHolder(itemView) 
                     itemView.context.getString(R.string.text_can_not_empty, data.jsonSchema.title)
                 it.visible = data.isError
             }
-        else if (data.isError && data.value != null)
+        else if (data.isError && data.value != null) {
             itemView.textError.let {
                 it.text = data.errorValue
                 it.visible = data.errorValue != null
             }
-        else itemView.textError.visible = false
+            val prefill = if (data.uiSchemaRule.uiWidget == PHONE_WIDGET)
+                data.value.toString().substring(2) //remove prefix
+            else data.value.toString()
+            itemView.editTextValue.setText(prefill)
+        } else itemView.textError.visible = false
     }
 }

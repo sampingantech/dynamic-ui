@@ -43,18 +43,18 @@ class FormDatePickerViewHolder(itemView: View) : BaseMoleculeViewHolder(itemView
             when (data.uiSchemaRule.uiWidget) {
                 DATE_WIDGET -> {
                     picker.setValueOfDate(calender) {
-                        setValue(data, DATE_PATTERN)
+                        setValue(data, getPattern(data.uiSchemaRule.uiWidget))
                     }
                 }
                 TIME_WIDGET -> {
                     picker.setValueOfTime(calender) {
-                        setValue(data, TIME_PATTERN)
+                        setValue(data, getPattern(data.uiSchemaRule.uiWidget))
                     }
                 }
                 else -> {
                     picker.setValueOfDate(calender) {
                         picker.setValueOfTime(calender) {
-                            setValue(data, DATE_TIME_PATTERN)
+                            setValue(data, getPattern(data.uiSchemaRule.uiWidget))
                         }
                     }
                 }
@@ -73,6 +73,14 @@ class FormDatePickerViewHolder(itemView: View) : BaseMoleculeViewHolder(itemView
         }
     }
 
+    private fun getPattern(uiWidget: String?): String {
+        return when (uiWidget) {
+            DATE_WIDGET -> DATE_PATTERN
+            TIME_WIDGET -> TIME_PATTERN
+            else -> DATE_TIME_PATTERN
+        }
+    }
+
     private fun setError(data: DynamicView) {
         val color = if (data.isError) R.color.reddish else R.color.very_light_grey
         itemView.viewLine.setBackgroundColor(ContextCompat.getColor(itemView.context, color))
@@ -82,12 +90,18 @@ class FormDatePickerViewHolder(itemView: View) : BaseMoleculeViewHolder(itemView
                     itemView.context.getString(R.string.text_can_not_empty, data.jsonSchema.title)
                 it.visible = data.isError
             }
-        else if (data.isError && data.value != null)
+        else if (data.isError && data.value != null) {
             itemView.textError.let {
                 it.text = data.errorValue
                 it.visible = data.errorValue != null
             }
-        else itemView.textError.visible = false
+            itemView.textValue.text =
+                DateHelper.convertDateToString(
+                    calender.time,
+                    getPattern(data.uiSchemaRule.uiWidget)
+                )
+
+        } else itemView.textError.visible = false
     }
 
     fun setValue(data: DynamicView, pattern: String) {

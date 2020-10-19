@@ -77,11 +77,19 @@ class FormAddressViewHolder(itemView: View) : BaseMoleculeViewHolder(itemView) {
                     itemView.context.getString(R.string.text_can_not_empty, data.jsonSchema.title)
                 it.visible = data.isError
             }
-        else if (data.isError && data.value != null)
+        else if (data.isError && data.value != null) {
             itemView.textError.let {
                 it.text = data.errorValue
                 it.visible = data.errorValue != null
             }
+            val address = data.value.toString().substringBeforeLast(";").substringBeforeLast(";")
+            val city = data.value.toString().substringBeforeLast(";").substringAfterLast(";")
+            val postalCode = data.value.toString().substringAfterLast(";")
+
+            itemView.editTextPostalAddress.setText(address)
+            itemView.editTextCity.setText(city)
+            itemView.editTextPostalCode.setText(postalCode)
+        }
         else itemView.textError.visible = false
     }
 }

@@ -49,6 +49,8 @@ class FormRadioViewHolder(itemView: View) : BaseMoleculeViewHolder(itemView) {
         val jumpLogic = data.jsonSchema.enumSectionTargetRef
         val value = mutableListOf<RadioValue>()
 
+        data.value?.let { name = it.toString() }
+
         value.addAll(
             values.mapIndexed { index, element ->
                 RadioValue(
@@ -96,14 +98,6 @@ class FormRadioViewHolder(itemView: View) : BaseMoleculeViewHolder(itemView) {
                 generateRadioCustomValue(radio, data.preview) {
                     data.value = it
                     data.preview = it
-                    if (it.isEmpty() || it.isBlank()) {
-                        data.isValidated = false
-                        data.errorValue = itemView.context.getString(
-                            R.string.text_can_not_empty,
-                            itemView.context.getString(R.string.text_other)
-                        )
-                    } else data.isValidated = true
-
                 }
             }
         }
@@ -124,6 +118,7 @@ class FormRadioViewHolder(itemView: View) : BaseMoleculeViewHolder(itemView) {
         actionClick: ((String) -> Unit),
     ) = itemView.apply {
         customValueContainer.visible = true
+        customValueEditText.hint = value.label
         customValueRadioButton.isChecked = name == value.tempValue
         if (preview != null && dataPreviewSet.not()) {
             customValueRadioButton.performClick()
@@ -179,11 +174,6 @@ class FormRadioViewHolder(itemView: View) : BaseMoleculeViewHolder(itemView) {
                 it.visible = data.isError
             }
         else if (data.isError && data.value != null)
-            itemView.textError.let {
-                it.text = data.errorValue
-                it.visible = data.errorValue != null
-            }
-        else if (data.isValidated.not())
             itemView.textError.let {
                 it.text = data.errorValue
                 it.visible = data.errorValue != null

@@ -46,15 +46,23 @@ class FormCheckBoxViewHolder(itemView: View) : BaseMoleculeViewHolder(itemView) 
         setupPreview(data.preview)
         setupButtonHelp(data.uiSchemaRule.uiHelp, data)
         itemView.linearLayoutCheckBox.removeAllViews()
+        data.value?.let {
+            when (it) {
+                is Collection<*> -> it.forEachIndexed { index, value ->
+                    datas[index] = value.toString()
+                }
+                else -> datas[0] = it.toString()
+            }
+        }
         val value = data.jsonSchema.items?.get(ENUM_KEY)?.asJsonArray
         val labels = data.jsonSchema.items?.get(ENUM_NAMES_KEY)?.asJsonArray
         value?.forEachIndexed { index, jsonElement ->
             if (jsonElement.isJsonNull) {
                 val checkBoxOther = generateCheckBoxOther(
-                        index = index,
-                        context = itemView.context,
-                        isError = data.isError,
-                        isEnable = data.isEnable
+                    index = index,
+                    context = itemView.context,
+                    isError = data.isError,
+                    isEnable = data.isEnable
                 ) { value, isChecked ->
                     setValue(value, isChecked, index)
                     val isNotValid = isChecked && Validation.checkValidate(
@@ -73,7 +81,7 @@ class FormCheckBoxViewHolder(itemView: View) : BaseMoleculeViewHolder(itemView) 
                 if (data.isError)
                     if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
                         checkBox.buttonTintList = ColorStateList.valueOf(
-                                ContextCompat.getColor(itemView.context, R.color.reddish)
+                            ContextCompat.getColor(itemView.context, R.color.reddish)
                         )
                     }
                 checkBox.setOnClickListener {
@@ -137,8 +145,8 @@ class FormCheckBoxViewHolder(itemView: View) : BaseMoleculeViewHolder(itemView) 
             actionClick: (String, Boolean) -> Unit
     ): LinearLayout {
         val paramsContainer = LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT
         ).apply { setMargins(0, 24, 0, 0) }
         val checkBox = generateCheckBox(context, isEnable, isError, index)
         val editText = generateEditText(context, index).apply {
@@ -164,15 +172,15 @@ class FormCheckBoxViewHolder(itemView: View) : BaseMoleculeViewHolder(itemView) 
 
     private fun generateCheckBox(context: Context, isEnable: Boolean, isError: Boolean, index: Int): CheckBox {
         val paramsCheckBox = TableRow.LayoutParams(
-                TableRow.LayoutParams.WRAP_CONTENT,
-                TableRow.LayoutParams.WRAP_CONTENT
+            TableRow.LayoutParams.WRAP_CONTENT,
+            TableRow.LayoutParams.WRAP_CONTENT
         ).apply { setMargins(0, 0, 12, 0) }
         return CheckBox(context).apply {
             layoutParams = paramsCheckBox
             if (isError) {
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
                     buttonTintList = ColorStateList.valueOf(
-                            ContextCompat.getColor(itemView.context, R.color.reddish)
+                        ContextCompat.getColor(itemView.context, R.color.reddish)
                     )
                 }
             }
